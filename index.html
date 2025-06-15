@@ -5,75 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Feliz Día del Padre (Temporal)! | Michel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .floating { animation: float 3s ease-in-out infinite; }
+        .shake:hover { animation: shake 0.5s; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            opacity: 0;
+        }
+        .trophy-glow {
+            box-shadow: 0 0 20px #f59e0b;
+            transition: all 0.3s ease;
+        }
+        .trophy-glow:hover {
+            box-shadow: 0 0 30px #f59e0b, 0 0 40px #f59e0b;
+            transform: scale(1.1);
+        }
+        .boots-ad {
+            background: linear-gradient(45deg, #f6e05e, #f59e0b);
+            border: 2px dashed #b7791f;
+        }
+        .boots-ad:hover {
+            transform: rotate(1deg) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body class="bg-yellow-50 min-h-screen">
+<body class="bg-yellow-50 min-h-screen font-sans">
     <div class="container mx-auto px-4 py-8">
+        <!-- Confetti container -->
+        <div id="confetti-container"></div>
+
         <!-- Header -->
-        <header class="text-center mb-8">
-            <h1 class="text-5xl font-bold text-yellow-800 mb-2">🏆 El Padre Más Tiza del Mundo 🏆</h1>
-            <p class="text-xl text-yellow-700 italic">(Edición Limitada - Oferta por Tiempo Limitado)</p>
-            <p class="text-xs italic">Nota legal: Oye...emm esto no viene al caso pero estoy vendiendo 3 pares de botas Foca y normal de esas yumas de tienda y refresco de paquetico por cantidad (serio asere fotos ap PV) </p>
-            <p class="text-xs italic"> vaya que pensabas que entrar aquí era solo pa comer p1ng@ y ahora a lo mejor hasta te vas con un par de botas...o dos😉</p>
-            <div class="mt-4 bg-yellow-200 p-4 rounded-lg">
-                <p class="text-yellow-900 font-semibold">⚠️ Aviso importante: Esta plaza está disponible SOLO hasta que Mell nazca (locos estan ustedes😎) ⚠️</p>
+        <header class="text-center mb-8 animate__animated animate__fadeInDown">
+            <h1 class="text-5xl font-bold text-yellow-800 mb-2 hover:scale-105 transition-transform duration-300">🏆 El Padre Más Tiza del Mundo 🏆</h1>
+            <p class="text-xl text-yellow-700 italic animate__animated animate__fadeIn animate__delay-1s">(Edición Limitada - Oferta por Tiempo Limitado)</p>
+            
+            <!-- Anuncio de botas con animación -->
+            <div class="boots-ad mt-4 p-4 rounded-lg cursor-pointer transition-all duration-300 animate__animated animate__pulse animate__infinite animate__slower">
+                <p class="text-xs italic font-bold">🚨 OFERTA RELÁMPAGO 🚨</p>
+                <p class="text-xs italic">Oye...emm esto no viene al caso pero estoy vendiendo 3 pares de botas Foca y normal de esas yumas de tienda y refresco de paquetico por cantidad (serio asere fotos ap PV)</p>
+                <p class="text-xs italic"> vaya que pensabas que entrar aquí era solo pa comer p1ng@ y ahora a lo mejor hasta te vas con un par de botas...o dos😉</p>
+            </div>
+
+            <div class="mt-4 bg-yellow-200 p-4 rounded-lg animate__animated animate__bounceIn animate__delay-2s">
+                <p class="text-yellow-900 font-semibold shake cursor-pointer">⚠️ Aviso importante: Esta plaza está disponible SOLO hasta que Mell nazca (locos estan ustedes😎) ⚠️</p>
             </div>
         </header>
 
         <!-- Main Content -->
         <main>
             <section class="flex flex-col md:flex-row gap-8 mb-12">
-                <div class="md:w-1/2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSd4NjXxiQsOaTblouTmHdJxq68MaVNsdEew&s" alt="Padre temporal" class="w-full rounded-lg shadow-lg border-4 border-yellow-500">
+                <div class="md:w-1/2 animate__animated animate__fadeInLeft">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSd4NjXxiQsOaTblouTmHdJxq68MaVNsdEew&s" 
+                         alt="Padre temporal" 
+                         class="w-full rounded-lg shadow-lg border-4 border-yellow-500 hover:rotate-1 transition-transform duration-300 floating">
                 </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-yellow-800 mb-4">¡Atención a todos mis contactos padres!</h2>
-                    <p class="text-lg mb-4">Queridos padres (especialmente los sánganos zapatúos que están en mis contactos):</p>
-                    <p class="text-lg mb-4">Hoy me levanté Rikisisisisisimo ,digase ísimo con noticias para ustedes. Actualmente hay una plaza VACANTE para <span class="font-bold text-yellow-700">"El Puro mas tiza del Mundo"</span>, y están todos postulados por mas mindundis que sean.</p>
-                    <p class="text-lg mb-4"> <span class="font-bold text-yellow-700">A mi equipo de trabajo y desarrollo</span> Felicidades tambien a ustedes chicos, creo que el único que se salva de cambiar pañales x ahora soy yo, este maldito año la vamos a romper, que digo romper, este año la vamos a reventar con todos los proyectos! las vacaciones en las Maldivas no se pagan solas, piensen en todas esas <span class="font-bold">pvt@s</span> indefensas que aún no saben lo que es un yate😔, somos su razón de ser, dependen de nosotros</p>
-                    <p class="text-lg mb-4">Pero ¡atención! Esta es una oferta por <span class="font-bold">TIEMPO LIMITADO</span>. Una vez que Mell nazca, el puesto será automáticamente ocupado por su legítimo dueño (o sea, yo 😎).</p>
-                    <div class="bg-yellow-100 p-4 rounded-lg mb-4 border-l-4 border-yellow-500">
-                        <p class="italic">"Mientras Mell no exista, pueden ir ocupando la plaza... como los vendetamales esos que andan en el P7 sabiendo que en la próxima parada se sube alguien."</p>
+                <div class="md:w-1/2 animate__animated animate__fadeInRight">
+                    <h2 class="text-3xl font-bold text-yellow-800 mb-4 hover:text-red-500 transition-colors duration-300">¡Atención a todos mis contactos padres!</h2>
+                    <p class="text-lg mb-4 animate__animated animate__fadeIn animate__delay-1s">Queridos padres (especialmente los sánganos zapatúos que están en mis contactos):</p>
+                    <p class="text-lg mb-4 animate__animated animate__fadeIn animate__delay-1s">Hoy me levanté Rikisisisisisimo ,digase ísimo con noticias para ustedes. Actualmente hay una plaza VACANTE para <span class="font-bold text-yellow-700 hover:scale-110 inline-block transition-transform">"El Puro mas tiza del Mundo"</span>, y están todos postulados por mas mindundis que sean.</p>
+                    <p class="text-lg mb-4 animate__animated animate__fadeIn animate__delay-2s"> <span class="font-bold text-yellow-700">A mi equipo de trabajo y desarrollo</span> Felicidades tambien a ustedes chicos, creo que el único que se salva de cambiar pañales x ahora soy yo, este maldito año la vamos a romper, que digo romper, este año la vamos a reventar con todos los proyectos! las vacaciones en las Maldivas no se pagan solas, piensen en todas esas <span class="font-bold hover:text-red-500 transition-colors">pvt@s</span> indefensas que aún no saben lo que es un yate😔, somos su razón de ser, dependen de nosotros</p>
+                    <p class="text-lg mb-4 animate__animated animate__fadeIn animate__delay-3s">Pero ¡atención! Esta es una oferta por <span class="font-bold hover:scale-110 inline-block transition-transform">TIEMPO LIMITADO</span>. Una vez que Mell nazca, el puesto será automáticamente ocupado por su legítimo dueño (o sea, yo 😎).</p>
+                    <div class="bg-yellow-100 p-4 rounded-lg mb-4 border-l-4 border-yellow-500 hover:border-red-500 transition-all duration-300">
+                        <p class="italic animate__animated animate__fadeIn animate__delay-4s">"Mientras Mell no exista, pueden ir ocupando la plaza... como los vendetamales esos que andan en el P7 sabiendo que en la próxima parada se sube alguien."</p>
                     </div>
                 </div>
             </section>
 
-            <section class="bg-yellow-200 p-6 rounded-lg mb-12">
-                <h2 class="text-2xl font-bold text-yellow-900 mb-4">📢 Anuncio Oficial del Comité del Día del Padre</h2>
+            <section class="bg-yellow-200 p-6 rounded-lg mb-12 animate__animated animate__fadeInUp animate__delay-1s hover:shadow-lg transition-shadow">
+                <h2 class="text-2xl font-bold text-yellow-900 mb-4 hover:rotate-1 transition-transform inline-block">📢 Anuncio Oficial del Comité del Día del Padre</h2>
                 <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <span class="mr-2">🔹</span>
+                    <li class="flex items-start animate__animated animate__fadeInRight animate__delay-2s">
+                        <span class="mr-2 hover:scale-150 transition-transform inline-block">🔹</span>
                         <span>Se aceptan auto-nominaciones (obviamente) para el puesto temporal de "El Puro mas Tiza"</span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="mr-2">🔹</span>
+                    <li class="flex items-start animate__animated animate__fadeInRight animate__delay-3s">
+                        <span class="mr-2 hover:scale-150 transition-transform inline-block">🔹</span>
                         <span>El puesto incluye: Estar temba y barrigón (cosa que a mi no me pasa) </span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="mr-2">🔹</span>
+                    <li class="flex items-start animate__animated animate__fadeInRight animate__delay-4s">
+                        <span class="mr-2 hover:scale-150 transition-transform inline-block">🔹</span>
                         <span>Requisitos: Tener al menos 1 hijo (aunque tu esposa se haya embarazado hace 3 dias, nadie te mando a echar tu sabes que tu ya sabes donde)</span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="mr-2">🔹</span>
+                    <li class="flex items-start animate__animated animate__fadeInRight animate__delay-5s">
+                        <span class="mr-2 hover:scale-150 transition-transform inline-block">🔹</span>
                         <span>Vigencia: Hasta el nacimiento de Mell (después, todos a coger la cola detrás de mi, lo he dicho 10 veces ya)</span>
                     </li>
                 </ul>
             </section>
 
             <section class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-yellow-800 mb-6">🏅 La Competencia es Reñida �</h2>
+                <h2 class="text-3xl font-bold text-yellow-800 mb-6 animate__animated animate__fadeIn">🏅 La Competencia es Reñida</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInLeft">
                         <div class="text-6xl mb-4">🥈</div>
                         <h3 class="text-xl font-bold mb-2">Segundo Lugar</h3>
                         <p>Lamine Yamal (este es el padre de todos ustedes en el FIFA)</p>
                     </div>
-                    <div class="bg-yellow-300 p-6 rounded-lg shadow-md transform scale-105">
+                    <div class="bg-yellow-300 p-6 rounded-lg shadow-md transform scale-105 trophy-glow animate__animated animate__pulse animate__infinite animate__slower">
                         <div class="text-6xl mb-4">🏆</div>
                         <h3 class="text-xl font-bold mb-2">Primer Lugar</h3>
                         <p>Ustedes (por ahora)</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInRight">
                         <div class="text-6xl mb-4">👑</div>
                         <h3 class="text-xl font-bold mb-2">Próximamente...</h3>
                         <p>Michel (he dicho ya que cuando Mell nazca malditos framboyanes)</p>
@@ -81,33 +128,33 @@
                 </div>
             </section>
 
-            <section class="bg-yellow-100 p-6 rounded-lg border-2 border-dashed border-yellow-400">
+            <section class="bg-yellow-100 p-6 rounded-lg border-2 border-dashed border-yellow-400 animate__animated animate__fadeInUp">
                 <h2 class="text-2xl font-bold text-yellow-800 mb-4">🚨 Para los Files 🚨</h2>
                 <p class="mb-4">Y pa' los que preguntan "¿Y qué gano con esto?", aquí tienen:</p>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <div class="bg-white p-4 rounded-lg text-center w-32">
+                    <div class="bg-white p-4 rounded-lg text-center w-32 hover:scale-110 transition-transform duration-300">
                         <div class="text-4xl mb-2">🛡️</div>
                         <p class="text-sm">Protección contra preguntas incómodas de "¿y cuándo te casas? (Primero hay q tener con quien casarse estúpidos)"</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg text-center w-32">
+                    <div class="bg-white p-4 rounded-lg text-center w-32 hover:scale-110 transition-transform duration-300">
                         <div class="text-4xl mb-2">🎖️</div>
                         <p class="text-sm">Derecho a decir "es que tú no eres padre" en cualquier discusión</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg text-center w-32">
+                    <div class="bg-white p-4 rounded-lg text-center w-32 hover:scale-110 transition-transform duration-300">
                         <div class="text-4xl mb-2">🧠</div>
                         <p class="text-sm">Excusa para olvidar cosas ("El aniversario, el cumpleaños, la cringe que ustedes dan etc")</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg text-center w-32">
+                    <div class="bg-white p-4 rounded-lg text-center w-32 hover:scale-110 transition-transform duration-300">
                         <div class="text-4xl mb-2">💸</div>
                         <p class="text-sm">emm MAMARRRRRE MAMARRRE (ya no sabia que más poner aquí😔)</p>
                     </div>
                 </div>
-                <p class="mt-6 text-center font-bold">⚠️ Disfruten el trono ⚠️</p>
+                <p class="mt-6 text-center font-bold animate__animated animate__pulse animate__infinite">⚠️ Disfruten el trono ⚠️</p>
             </section>
         </main>
 
         <!-- Footer -->
-        <footer class="mt-12 text-center text-yellow-700">
+        <footer class="mt-12 text-center text-yellow-700 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="mb-4">
                 <p class="text-sm">Este mensaje ha sido patrocinado por:</p>
                 <p class="font-bold">La Asociación de Padres Temporales (APT) - Sede Michel</p>
@@ -116,5 +163,64 @@
             <p class="text-xs mt-4">© 2025 Michel - Todos los derechos reservados (incluyendo el derecho a ser el mejor padre después del nacimiento de Mell)</p>
         </footer>
     </div>
+
+    <script>
+        // Efecto de confeti al hacer clic en cualquier parte
+        document.addEventListener('click', function(e) {
+            createConfetti(e.clientX, e.clientY);
+        });
+
+        function createConfetti(x, y) {
+            const colors = ['#f59e0b', '#ef4444', '#10b981', '#3b82f6', '#8b5cf6'];
+            const confettiContainer = document.getElementById('confetti-container');
+            
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${x}px`;
+                confetti.style.top = `${y}px`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                confettiContainer.appendChild(confetti);
+                
+                // Animación
+                const animation = confetti.animate([
+                    { opacity: 1, transform: `translate(0, 0) rotate(0deg)` },
+                    { 
+                        opacity: 0, 
+                        transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg)` 
+                    }
+                ], {
+                    duration: 1000 + Math.random() * 1000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+
+        // Efecto especial para el trofeo
+        const trophy = document.querySelector('.trophy-glow');
+        trophy.addEventListener('mouseenter', () => {
+            createConfetti(
+                trophy.getBoundingClientRect().left + trophy.offsetWidth / 2,
+                trophy.getBoundingClientRect().top + trophy.offsetHeight / 2
+            );
+        });
+
+        // Efecto de temblor aleatorio para elementos con clase 'shake'
+        setInterval(() => {
+            const shakeElements = document.querySelectorAll('.shake');
+            shakeElements.forEach(el => {
+                if (Math.random() > 0.9) {
+                    el.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        el.style.animation = '';
+                    }, 500);
+                }
+            });
+        }, 3000);
+    </script>
 </body>
 </html>
